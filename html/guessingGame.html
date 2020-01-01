@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Guessing Game</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                color: #457FF0;
+                background-color: black;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script>
+            var theNumber =  0;
+            var thePictureNumber = 0;
+            var loop = null;
+            var position = null;
+            var score = 0;
+            var scoreTable = [
+                {name: 'Holly', score: '3'},
+                {name: 'Wess ', score: '5'},
+                {name: 'Cameron', score: '7'},
+                {name: 'David', score: '8'},
+                {name: 'Jeff', score: '9'}
+            ];
+                        
+            //  Create images
+            var success = ["guess/correct.png", "guess/yes.jpg", "guess/success.png"];
+            var high = "guess/high.png";
+            var low = "guess/low.png";
+            var newGame = "guess/newGame.png";
+            var tooHigh = "guess/tooHigh.png";
+            var tooLow = "guess/tooLow.png";
+            var wayTH = "guess/wayTooHigh.png";
+            var wayTL = "guess/wayTooLow.png";
+
+            function setup()
+            {
+                theNumber = Math.random() * 100;
+                theNumber = Math.floor(theNumber);
+                //  DEBUG  //
+//                theNumber = 50;
+                
+                thePictureNumber = 0;
+                position = null;
+                score = 0;
+                document.getElementById('thePicture').src = newGame.valueOf();
+                document.getElementById('guess').disabled = false;
+                document.getElementById('userGuess').disabled = false;
+                document.guessForm.userGuess.select();
+                document.guessForm.userGuess.focus();
+                document.getElementById('low').style.top = "350px";
+                document.getElementById('high').style.top = "50px";
+                loadTable(document.getElementById('highScores'), ['name', 'score'], scoreTable);
+            }
+            function checkGuess()
+            {
+                var userGuess = eval(document.guessForm.userGuess.value);
+                score++;
+                if(theNumber === userGuess)
+                {
+                    loop = setInterval("changePicture()", 1500);
+                    document.getElementById('guess').disabled= true;
+                    document.getElementById('userGuess').disabled = true;
+
+                    document.getElementById('reset').select();
+                    document.getElementById('thePicture').src=success[2].valueOf();
+                    checkHighScore();
+                }
+                else
+                {
+                    if (userGuess > theNumber){
+                        document.getElementById('high').style.top = (((100-userGuess)*3)+50) + "px";
+                        if (userGuess-15 > theNumber){
+                            document.getElementById('thePicture').src = wayTH.valueOf();
+                        }
+                        else{
+                            document.getElementById('thePicture').src = tooHigh.valueOf();
+                        }
+                    }
+                    else if(userGuess < theNumber){
+                        document.getElementById('low').style.top = (((100-userGuess)*3)+50) + "px";
+                        if (userGuess+15 < theNumber){
+                            document.getElementById('thePicture').src = wayTL.valueOf();
+                        }
+                        else{
+                            document.getElementById('thePicture').src = tooLow.valueOf();
+                        }
+                    }
+                    else{
+                        alert("An error occurred...");
+                    }
+                    document.guessForm.userGuess.focus();
+                    document.guessForm.userGuess.select();
+                }
+            }
+            function changePicture()
+            {
+                document.getElementById('thePicture').src=success[thePictureNumber].valueOf();
+                if (thePictureNumber < 2)
+                    thePictureNumber++;
+                else{thePictureNumber = 0;}
+            }
+            function stopInterval()
+            {
+                clearInterval(loop);
+                loop = null;
+                setup();
+            }
+            
+            function checkHighScore()
+            {
+                //  Check if the score is a new high score
+                var newScore = false;
+                if(scoreTable[4].score !== null){
+                    if (score <= scoreTable[4].score) {
+                        newScore = true;
+                    }
+                }
+                else {
+                    newScore = true;
+                }
+                
+                // Place current score on leaderboard
+                if(newScore){
+                    var invalid = true;
+                    while (invalid){
+                        var name = prompt("You just made a new high score! What is your name? (max 15 digits)", "");
+                        if (name.length < 16 && name.length > 1) invalid = false;
+                    }
+                    
+                    //  Find which rank the high score will need to be placed in
+                    var rank = null;
+                    if      (score <= scoreTable[0].score) rank = 1;
+                    else if (score <= scoreTable[1].score) rank = 2;
+                    else if (score <= scoreTable[2].score) rank = 3;
+                    else if (score <= scoreTable[3].score) rank = 4;
+                    else if (score <= scoreTable[4].score) rank = 5;
+                    
+                    //  For debugging: //
+//                    alert("Your score ("+score+") is ranked #"+rank+", which is currently held by "+ scoreTable[rank-1].name +
+//                            " who has a score of "+scoreTable[rank-1].score);
+                    
+                    //  Rearrange leaderboard based on rank (5th = 4th, 4th=3rd, etc)
+                    //  *Note that we will be placing the ranks in an array so rank--
+                    switch(rank)
+                    {
+                        case 1:
+                            scoreTable[rank+3].score = scoreTable[rank+2].score;
+                            scoreTable[rank+3].name = scoreTable[rank+2].name;
+                        case 2:
+                            scoreTable[rank+2].score = scoreTable[rank+1].score;
+                            scoreTable[rank+2].name = scoreTable[rank+1].name;
+                        case 3:
+                            scoreTable[rank+1].score = scoreTable[rank].score;
+                            scoreTable[rank+1].name = scoreTable[rank].name;
+                        case 4:
+                            scoreTable[rank].score = scoreTable[rank-1].score;
+                            scoreTable[rank].name = scoreTable[rank-1].name;
+                        case 5:
+                            scoreTable[rank-1].score = score;
+                            scoreTable[rank-1].name = name;
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+            function loadTable(tableId, fields, data) {
+                //$('#' + tableId).empty(); //not really necessary
+                var rows = '';
+                $.each(data, function(index, item) {
+                    var row = '<tr>';
+                    $.each(fields, function(index, field) {
+                        row += '<td>' + item[field+''] + '</td>';
+                    });
+                    rows += row + '<tr>';
+                });
+                $(tableId).html(rows);
+            }
+
+        </script>
+    </head>
+    <body onLoad="setup()"><center>
+        <table>
+            <tr>
+                <td align="center">
+                    <h1>Guessing Game (Meme Edition)</h1>
+                </td>
+            </tr>
+            <tr>
+                <td><h3>Guess the randomly-generated number between 0 and 99</h3></td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <form name="guessForm" action="javascript:checkGuess()">
+                        Your Guess: <input type="text" id="userGuess" size="10"
+                                maxlength="2" onclick="value=''">
+                    </form>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <input type="button" value="Guess" id="guess" onClick="checkGuess()">
+                    <input type="reset" value="Reset" id="reset" onClick="stopInterval()">
+                </td>
+            </tr>
+            <tr>
+                <td align="center"><img src="guess/newGame.png" id="thePicture" alt="" style="width: 400px"/></td>
+            </tr>
+        </table>
+        <img src="guess/ruler.png" alt="" style="position: absolute; top:50px; right: 75px;" id="ruler"/>
+        <img src="guess/high.png" alt="" style="position: absolute; top:50px; right: 55px;" id="high"/>
+        <!--<small style="position: absolute" value="100" id="highText"/>-->
+        <img src="guess/low.png" alt="" style="position: absolute; top:350px; right: 55px;" id="low"/>
+    </center>
+    <table style="position: absolute; left:50px; top: 50px;"><tr><td>High Scores:</td></tr></table>
+    <table style="position: absolute; left: 50px; top: 75px; border: 2px solid white;" id="highScores">
+        <tr><th>High Scores</th></tr>
+        <tr><td>No data</td></tr>
+    </table></body>
+</html>

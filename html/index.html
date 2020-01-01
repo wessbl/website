@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Wesley's Homepage</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .standard{
+            }
+            body{
+                font-family: Montserrat, sans-serif;
+            }
+            a{
+                color: cadetblue;
+            }
+            p.paragraph{
+                width: 300px;
+                text-align: justify;
+                text-indent: 10mm;
+            }
+            tr.spacer{
+                padding-top: 50px;
+            }
+            td{
+                align-content: center;
+                text-align: center;
+            }
+            td.links{
+                width: 150px;
+                text-align: center;
+                padding: 10px;
+            }
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover {
+    background-color: #457FF0;
+}
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: #457FF0;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #457FF0}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+        </style>
+    </head>
+    
+    
+    <body style='background-color: #222222; color: white'>
+        <center>
+            <ul>
+                <li><a href="map.html">Interactive Map of Utah</a></li>
+                <li><a href="littleBoxes.html">Little Boxes</a></li>
+                <li><a href="pizza.html">Order a Pizza</a></li>
+                <li><a href="guessingGame.html">Guessing Game</a></li>
+                <li><a href="TicTacToe.html">Tic Tac Toe</a></li>
+                <li><a href="band.html">The Band</a></li>
+                <li><a href="company.html">The Company</a></li>
+                  <li class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn">Extras...</a>
+                    <div class="dropdown-content">
+                      <a href="LiveSite.php">Advanced Web Class</a>
+                      <a href="http://wessl.weebly.com">My ePortfolio</a>
+                      <a href="resume.html">My Resume</a>
+                    </div>
+                  </li>
+
+                <li></li>
+                <li></li>
+                <li></li>
+
+            </ul>
+            <h1 style='color: cadetblue; font-size: 300%'>
+                Wesley Lancaster
+            </h1>
+            <h3 style='color: cadetblue'>Projects from my HTML/JS Class</h3>
+            <table>
+                <tr>
+                    <td><img src="images/Profile Picture.jpg" alt="" width="300">
+                        <em><br>I'm the one on the right :)</em></td>
+                    <td>
+                        <p class="paragraph">
+                            I love playing with computers, writing <a href="https://www.youtube.com/playlist?list=PLcAc-MQFUgqDylaCwxUwEHL_4s_GYrfv4">
+                            music</a>, and spending time with my beautiful wife 
+                            and our crazy kiddo.
+                            <br><br>
+                            The links above are my HTML/JS projects, in order of simplicity.
+                            <br><br>
+                            Check out my PHP/JS/SQL projects <a href="LiveSite.php">here</a>.
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </center>
+    </body>
+</html>

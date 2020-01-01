@@ -1,0 +1,175 @@
+<html>
+    <head><title>My Concerts</title>
+        <style>
+            body
+            {
+                background-color: #212121;
+            }
+            div.photoBox
+            {
+                background-color:black;
+                color:white;
+                border-style:dotted;
+                border-color: #ffff66;
+                border-radius: 20px;
+                margin:20px;
+                padding:10px;
+                top:80px;
+                left: 420px;
+                width: 775px;
+                height: 125px;
+                position: absolute;
+            }
+            div.containerBox
+            {
+                background-color: black;
+                color:white;
+                border-style:solid;
+                border-color: #457FF0;
+                border-width:1px;
+                padding:10px;
+                position:relative;
+                top:-7px;
+                left:-7px;
+                height:auto;
+                width:auto;
+            }
+            div.list
+            {
+                background-color: black;
+                position:relative;
+                top:7px;
+                left:7px;
+                margin: 10px;
+                height:300px;
+                width:250px;
+            }    
+
+            .concert 
+            {
+                float: left;
+                margin: 10px;
+                border: 4px solid #457FF0;
+                border-radius: 30px;
+                padding: 10px;
+                background-color: black;
+                text-align: center;
+                font-size: large;
+                color: white;
+            }
+            .title {
+                clear: left;
+                border: 2px solid white;
+                border-radius: 30px;
+                font-size: 300%;
+                text-align:center;
+                vertical-align: middle;
+                color: #457FF0;
+                padding: 10px;
+                background: black;
+            }
+            div.moreAboutMe{
+                border:3px solid #ffff66;
+                border-radius: 60px 10px 10px 10px;
+                width: 200px;
+                height: 75px;
+                background-color: black;
+                position: fixed;
+                bottom: 5px;
+                right: 5px;
+                padding: 10px;
+                color: white;
+                text-align: center;
+            }
+            img.band{
+                width: 350px;
+                height: 175px;
+                opacity: .6;
+            }
+            img:hover{
+                opacity: 1.0;
+            }
+            img.me{
+                height:125px;
+                float: left;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="title">Where I've Performed:</div>
+        <div class='photoBox'>
+            <img src="concerts/me1.jpg" alt="" class="me"/>
+            <img src="concerts/me2.jpg" alt="" class="me"/>
+            <img src="concerts/me3.jpg" alt="" class="me"/>
+            <img src="concerts/me4.jpg" alt="" class="me"/>
+        </div>
+        
+        <div class='list' style="width: 400px; height:auto;">
+            <div class='containerBox' style="width:auto; height:auto;
+                 background-color: black">
+                <ul>
+                    <li>Oktoberfest</li>
+                    <li>Live on the Radio</li>
+                    <li>Salt Lake Art Festival</li>
+                    <li>Pleasant Grove Art Festival</li>
+                    <li>Multiple Battle of the Bands</li>
+                    <li>Several SLC bars</li>
+                </ul>
+            </div>    
+        </div>
+
+        <div class='title'>Concerts I've Attended</div>
+
+        <div class="concert">Australian Pink Floyd<br>
+            <a href="http://www.aussiefloyd.com/">
+                <img src="concerts/apf.jpg" alt="" class="band"/>
+            </a>
+        </div>
+        <div class="concert">Tool<br>
+            <a href="http://www.toolband.com/">
+                <img src="concerts/tool.jpg" alt="" class="band"/>
+            </a>
+        </div>
+        <div class="concert">Warped Tour<br>
+            <a href="http://vanswarpedtour.com/">
+                <img src="concerts/wt.jpg" alt="" class="band"/>
+            </a>
+        </div>
+        <div class="concert">Apocalyptica<br>
+            <a href="http://www.apocalyptica.com/en/">
+                <img src="concerts/apoc.jpg" alt="" class="band"/>
+            </a>
+        </div>
+        <div class="concert">Big-A** Show feat. 10 Years<br>
+            <a href="http://www.usana-amp.com/events/2016/05/07/x96-big-ass-show/800">
+                <img src="concerts/bash.jpg" alt="" class="band"/>
+            </a>
+        </div>
+        <div class="concert">Keane<br>
+            <a href="http://keanemusic.com/">
+                <img src="concerts/keane.jpg" alt="" class="band"/>
+            </a>
+        </div>
+        <div class="concert">I The Mighty<br>
+            <a href="http://www.equalvision.com/artists/i-the-mighty/">
+                <img src="concerts/itm.jpg" alt="" class="band"/>
+            </a>
+        </div>
+        <div class="concert">Circa Survive (x3)<br>
+            <a href="http://circasurvive.com/">
+                <img src="concerts/cs.jpg" alt="" class="band"/>
+            </a>
+        </div>
+        <div class="concert">The Dear Hunter (summer 2017)<br>
+            <a href="http://thedearhunter.com/">
+                <img src="concerts/tdh.png" alt="" class="band"/>
+            </a>
+        </div>
+        
+        <div class="moreAboutMe"><a href="resume.html">Click here</a><br>
+            to learn more about me, or<br><a href="index.html">click here</a><br>
+            to see my other projects!
+        </div>
+    </body>    
+</html>

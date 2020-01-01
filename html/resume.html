@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<!--
+4. An Ordered List - Create an ordered list entitled "Top Ten Signs You Have
+Been Spending Too Much Time Web Surfing". Come up with at least ten signs that
+someone has been spending too much time on the Web
+-->
+<html>
+    <head>
+        <title>Wess' Resume</title>
+        <meta charset="UTF-8">
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <style>
+            table.round{
+                border: 2px solid #457FF0;
+                border-radius: 20px;
+                padding: 20px;
+                width: 600px;
+            }
+            table.roundLast{
+                border: 2px solid #457FF0;
+                border-radius: 20px;
+                padding: 20px;
+                width: 800px;
+            }
+            th{
+                font-family: Georgia, serif;
+                width: 150px;
+                padding: 5px;
+                padding-bottom: 10px;
+                font-size: larger;
+            }
+            td{
+                font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+                font-weight: 100;
+                text-align: center;
+                color: white;
+            }
+            caption{
+                color: white;
+            }
+            td.paragraph{
+                width: 300px;
+                text-align: justify;
+                text-indent: 10mm;
+                padding-right: 10px
+            }
+            body{
+                color: #457FF0;
+                background-color: black;
+                background-image: url("images/tech.jpg");
+                background-position: right;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <h1 style='font-size: 300%'><b>Wesley Lancaster</b></h1>
+            <b style='font-size: large'>
+                12231 High Creek Circle<br>
+                Riverton, Utah 84065<br>
+                wess.lancaster@gmail.com<br>
+                (801)712-2995<br>
+            </b>
+            <p><em>Redefining Awesomeness Since 1990</em></p>
+
+            <table id="td01"><!Education Table>
+                <caption><h2>Education</h2></caption>
+                    <td><table class="round">
+                            <tr>
+                                <th>School</th>
+                                <th>Location</th>
+                                <th>Years Attended</th>
+                                <th>Degree Awarded</th>
+                            </tr>
+                            <tr>
+                                <td>Riverton High School</td>
+                                <td>Riverton, Utah</td>
+                                <td>2005-08</td>
+                                <td>High School Diploma</td>
+                            </tr>
+                            <tr>
+                                <td>Salt Lake Community College</td>
+                                <td>Taylorsville, Utah</td>
+                                <td>2009-17</td>
+                                <td>AS in Computer Science</td>
+                            </tr>
+                    </table></td>
+            </table>
+
+            <table id="td02"><!Work History Table>
+                <caption><h2>Work History</h2></caption>
+                    <td><table class="round">
+                            <tr>
+                                <th>Company</th>
+                                <th>Location</th>
+                                <th>Years Attended</th>
+                                <th>Position</th>
+                            </tr>
+                            <tr>
+                                <td>Sticker Shop</td>
+                                <td>Sandy, Utah</td>
+                                <td>2007-09</td>
+                                <td>Sales/Management</td>
+                            </tr>
+                            <tr>
+                                <td>eBay, Inc</td>
+                                <td>Draper, Utah</td>
+                                <td>2012-13</td>
+                                <td>Call Center/Service</td>
+                            </tr>
+                            <tr>
+                                <td>Mattress Dealzz</td>
+                                <td>Murray, Utah</td>
+                                <td>2014-2017</td>
+                                <td>Service/Sales/Warehouse</td>
+                            </tr>
+                    </table></td>
+            </table>
+            
+            <table id="td03"><!Sell Yourself Table>
+                <caption><h2>What I'm Seeking</h2></caption>
+                    <td><table class="roundLast">
+                        <td>
+                            <img src="images/code.jpg" alt="" width="300"/>
+                        </td>
+                        <td class="paragraph">
+                            I'm currently seeking a position as a software development
+                            intern. I believe I'll be a great fit in any position that
+                            utilizes and further strengthens my knowledge, but I am a fast
+                            and <em>eager</em> learner in all areas of computer technology.
+                        </td>
+                        <td style="text-align: left">
+                            My Experience:
+                            <ul>
+                                <li>2 years Java</li>
+                                <li>1 year C++</li>
+                                <li>Some HTML/PHP/JS</li>
+                                <li>Some machine language</li>
+                            </ul>
+                        </td>
+                </table></td>
+            </table>
+        </center>
+    </body>
+</html>

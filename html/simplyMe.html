@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Bootstrap Theme Simply Me</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+            .bg-1 { 
+                background-color: #457FF0; /* Green */
+                color: #ffffff;
+            }
+            .bg-2 {
+                background-color: #2f2f2f; /* Dark Blue */
+                color: #ffffff;
+            }
+            .bg-3 { 
+                background-color: limegreen; /* White */
+                color: black;
+            }
+            .container-fluid {
+                padding-top: 70px;
+                padding-bottom: 70px;
+            }
+            .navbar {
+                padding-top: 15px;
+                padding-bottom: 15px;
+                border: 0;
+                border-radius: 0;
+                margin-bottom: 0;
+                font-size: 12px;
+                letter-spacing: 5px;
+                background-color: #f5f6f7;
+/*                border-bottom: 1px solid #474e5d;*/
+            }
+            .navbar-nav li a:hover {
+                color: #1abc9c !important;
+            }
+            .bg-4 { 
+                background-color: #2f2f2f;
+                color: #ffffff;
+            }
+            body {
+                font: 20px "Montserrat", sans-serif;
+                line-height: 1.8;
+                color: #f5f6f7;
+            }
+
+            p {font-size: 16px;}
+
+        </style>
+
+    </head>
+    <body>
+        <nav class="navbar navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Me</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#introduction">ME</a></li>
+                        <li><a href="#coding">TECH</a></li>
+                        <li><a href="#music">MUSIC</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid bg-1 text-center" id="introduction">
+            <h1>Wess Lancaster</h1>
+            <img src="me/profile.jpg" alt="" class="img-responsive img-circle" style="width: 250px; display:inline"/>
+            <h3>I'm a lover of technology and music</h3>
+        </div>
+        <div class="container-fluid bg-2 text-center" id="coding">
+            <h3>Playing with Computers</h3>
+            <img src="me/code.jpg" alt="" class="img-circle" style="height: 250px"/>
+            <p>I spend much of my time programming. I've written code for board
+            games, POS systems, and an entire PacMan game from scratch.</p>
+        </div>
+        <div class="container-fluid bg-3 text-center" id="music">
+            <div class="row">
+                <div class="col-sm-4">
+                    <p>Playing Live</p>
+                    <img src="me/live.jpg" alt="" class="img-responsive img-circle" style="display:inline"/>
+                </div>
+                
+                <div class="col-sm-4">
+                    <p>Setting Up</p>
+                    <img src="me/setup.jpg" alt="" class="img-responsive img-circle" style="display:inline"/>
+                </div>
+                <div class="col-sm-4"> 
+                    <p>Live On Radio</p>
+                    <img src="me/radio.jpg" alt="" class="img-responsive img-circle" style="display:inline"/>
+                </div>
+                <p>
+                    One of my biggest passions: I love listening, writing,
+                    and playing music. I've performed live at a ton of venues, 
+                    and have been in metal, post-hardcore, rap-rock, and blues
+                    bands.
+                </p>
+            </div>
+            <br><br>
+            <a href="https://www.youtube.com/playlist?list=PLcAc-MQFUgqDylaCwxUwEHL_4s_GYrfv4" class="btn btn-default btn-lg">
+                <span class="glyphicon glyphicon-search"></span> See My Work
+            </a>
+        </div>
+        <footer class="container-fluid bg-4 text-center">
+            <p>Bootstrap Theme Made With Help From <a href="https://www.w3schools.com">www.w3schools.com</a></p> 
+        </footer>
+    </body>
+</html>

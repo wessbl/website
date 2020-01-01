@@ -1,0 +1,127 @@
+<html>
+    <head>
+        <title>Pizza Example</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                background-image: url("images/italy.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            fieldset {
+                display: inline;
+                padding: 8px;
+                margin: 5px;
+                margin-left: 20px;
+                margin-right: 20px;
+                border-radius: 5px;
+            }
+            input.contact {
+                size: 15px;
+            }
+            td{
+                text-align: center;
+                align-content: center;
+            }
+            fieldset.menu{
+                background-color: black;
+                color: white;
+            }
+
+        </style>
+    </head>
+    <body><center>
+        <h1>Mariana's Pizzeria Italiano</h1>
+        <form name='orderForm' action="MAILTO:kklassen@bruinmail.slcc.edu" method="post" enctype='text/plain'>
+            <table>
+                <td>
+                    <fieldset class="menu">
+                        <legend><b>Favorites</b></legend>
+                        <div><img src="images/pep.jpg" alt=""/></div>
+                        <div>Classic Pepperoni with marinara</div>
+                        <div><img src="images/meat.png" alt=""/></div>
+                        <div>Meat Lovers with marinara sauce, pepperoni, sausage, and ham</div>
+                    </fieldset>
+                </td>
+                <td>
+                    <fieldset><legend><b>YOUR INFORMATION</b></legend>
+                        <div>
+                            <label>First Name:</label>
+                            <input class="contact" name="firstName">
+                        </div>
+                        <div>
+                            <label>Last Name: </label>
+                            <input class="contact" name="lastName">
+                        </div>
+                        <div>
+                            <label>Address: </label>
+                            <input class="contact" name="address">
+                        </div>
+                        <div>
+                            <label>Phone Number:</label>
+                            <input class="contact" name="phone">
+                        </div>
+                    </fieldset>
+                    
+                    <!- -Pizza Size radio buttons- - ->
+                    <fieldset><legend><b>SIZE</b></legend>
+                        <input type="radio" name="Size" value="small"> Small &nbsp;
+                        <input type="radio" name="Size" value="medium" > Medium &nbsp;
+                        <input type="radio" name="Size" value="large" checked> Large &nbsp;
+                        <input type="radio" name="Size" value="x-large" > Extra Large &nbsp;
+                    </fieldset>
+                    <fieldset><legend><b>TYPE</b></legend>
+                        <!- - Pizza Crust drop down selections - ->
+                        <b>CRUST:</b>
+                        <select name="Crust">
+                            <option value="hand-hossed" selected="">Hand-Tossed</option>
+                            <option value="garlic">Garlic Spread</option>
+                            <option value="stuffed">Stuffed</option>
+                        </select>
+                        &nbsp;
+                        <!- - Pizza Sauce drop down selections- ->
+                        <b>SAUCE:</b>
+                        <select name="Sauce">
+                            <option value="marinara" selected="">Marinara</option>
+                            <option value="alfredo">Alfredo</option>
+                            <option value="barbeque">Barbeque</option>
+                        </select>
+                    </fieldset>
+                    <!- -Pizza Topping check box selection - - ->
+                    <fieldset>
+                        <legend><b>TOPPINGS</b></legend>
+                        <table>
+                            <tr>
+                                <td><input type="checkbox" name="toppings" value="pepperoni" checked> Pepperoni</td>
+                                <td><input type="checkbox" name="toppings" value="sausage"> Sausage</td>
+                                <td><input type="checkbox" name="toppings" value="chicken"> Chicken</td>
+                                <td><input type="checkbox" name="toppings" value="peppers"> Peppers</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="toppings" value="onions"> Onions</td>
+                                <td><input type="checkbox" name="toppings" value="mushrooms"> Mushrooms</td>
+                                <td><input type="checkbox" name="toppings" value="ham"> Ham</td>
+                                <td><input type="checkbox" name="toppings" value="pineapple"> Pineapple</td>
+                            </tr>
+                        </table>
+                    </fieldset>
+                    <fieldset><legend><b>SPECIAL REQUESTS:</b></legend>
+                        <textarea rows="4" cols="50" name="Customer Request">Enter text here...</textarea><br>
+                        <input type="submit" value="Send">
+                        <input type="reset" value="Reset">
+                    </fieldset>
+                </td>
+                <td>
+                    <fieldset class="menu">
+                        <legend><b>Favorites</b></legend>
+                        <div><img src="images/bbq.jpg" alt=""/></div>
+                        <div>Barbecue Chicken: barbecue sauce, chicken, onions</div>
+                        <div><img src="images/hwn.png" alt=""/></div>
+                        <div>The Worst Pizza Ever: pineapple, ham</div>
+                    </fieldset>
+                </td>
+            </table>
+        </form>
+    </center></body>
+</html>
